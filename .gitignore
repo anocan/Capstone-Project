@@ -1,0 +1,8 @@
+/data/*
+data
+chicken_with_mobilenetv2.keras
+chicken.keras
+__pycache__
+testmodule
+models/*
+.DS_Store
