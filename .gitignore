@@ -6,3 +6,5 @@ __pycache__
 testmodule
 models/*
 .DS_Store
+testData/*
+example_picker.py
