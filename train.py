@@ -12,7 +12,7 @@ from tensorflow.keras import layers, models # type: ignore
 import matplotlib.pyplot as plt
 
 from tensorflow.keras import regularizers # type: ignore
-from augmentation import augmentImages
+from legacyFiles.augmentation import augmentImages
 
 
 """ import ssl
