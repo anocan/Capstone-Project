@@ -3,15 +3,15 @@ import shutil
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
+from tensorflow.keras import layers # type: ignore
 #from tensorflow.keras.applications import MobileNetV2
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from tensorflow.keras.applications.resnet50 import preprocess_input
-from tensorflow.keras.applications import ResNet50
-from tensorflow.keras import layers, models
+from tensorflow.keras.applications.resnet50 import preprocess_input # type: ignore
+from tensorflow.keras.applications import ResNet50 # type: ignore
+from tensorflow.keras import layers, models # type: ignore
 import matplotlib.pyplot as plt
 
-from tensorflow.keras import regularizers
+from tensorflow.keras import regularizers # type: ignore
 from augmentation import augmentImages
 
 

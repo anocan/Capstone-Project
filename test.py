@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.applications.resnet50 import preprocess_input
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.applications.resnet50 import preprocess_input # type: ignore
+from tensorflow.keras.preprocessing.image import load_img, img_to_array # type: ignore
 import matplotlib.pyplot as plt
 
 # Load the saved model
@@ -25,11 +25,11 @@ def preprocess_image(image_path):
     return preprocess_input(img_array)
 
 #"testData"
-PATH = "testmodule/example_set1/drumsticks10foto"
+PATH = "testData/"
 
 
 # Path to a new image
-image_path = f"{PATH}/ex9.jpg"   # Replace with the path to your image
+image_path = "testmodule/example_set1/butterflyDrumsticks10foot/ex5.jpg"   # Replace with the path to your image
 
 # Preprocess the image
 input_data = preprocess_image(image_path)

@@ -1,18 +1,18 @@
 import cv2
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.utils import img_to_array
-from tensorflow.keras.applications.resnet50 import preprocess_input
+from tensorflow.keras.models import load_model # type: ignore
+from tensorflow.keras.utils import img_to_array # type: ignore
+from tensorflow.keras.applications.resnet50 import preprocess_input # type: ignore
 import tensorflow as tf
 
 # Load the trained model
-model = load_model("MODEL-X.keras")
+model = load_model("models/MODEL-X.keras")
 
 # Class names
 names = ["breasts", "butterfliedDrumsticks", "drumsticks", "wholeLeg", "wings"]
 
 # Video file path (pre-recorded video)
-VIDEO_PATH = "/Users/anilbudak/VSCode/Bitirme/CNN/testData/videos/video5.MOV"  # Update this with your video file path
+VIDEO_PATH = "testData/videos/Custom/Parameter-Input-Frequency/2x/IMG_8658_2x.mp4"  # Update this with your video file path
 
 # Preprocess function (consistent with ResNet50)
 def preprocess_frame(frame):
@@ -30,8 +30,8 @@ if not cap.isOpened():
 
 # Define cropping region (central 50% of the frame)
 def get_crop_region(frame_width, frame_height):
-    rect_width = int(frame_width * 0.8)
-    rect_height = int(frame_height * 0.4)
+    rect_width = int(frame_width * 0.5)
+    rect_height = int(frame_height * 0.6)
     rect_x1 = (frame_width - rect_width) // 2
     rect_y1 = (frame_height - rect_height) // 2
     return rect_x1, rect_y1, rect_width, rect_height
@@ -72,8 +72,18 @@ while True:
     cv2.imshow("Chicken Product Classification", frame)
 
     # Press 'q' to exit
+
+    key = cv2.waitKey(0)  # Wait indefinitely until a key is pressed
+    if key == ord('q'):  # Press 'q' to quit
+        break
+    elif key == ord(' '):  # Press spacebar to advance to the next frame
+        continue
+
+    """
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+    """
+
 
 # Release video and close windows
 cap.release()
